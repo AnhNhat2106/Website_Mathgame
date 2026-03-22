@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Cấu hình "hộp" Database SQL Server
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mathgame_sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=MathGame@123456
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql # Giữ lại dữ liệu kể cả khi xoá hộp
+
+  # Cấu hình "hộp" Spring Boot App
+  app:
+    build: .
+    container_name: mathgame_app
+    ports:
+      - "8088:8080"
+    environment:
+      # Truyền biến môi trường báo cho Spring Boot biết địa chỉ Database là hộp "db"
+      - DB_HOST=db
+      - SPRING_DATASOURCE_PASSWORD=MathGame@123456
+    depends_on:
+      - db # Đợi hộp db chạy lên trước rồi mới chạy hộp app
+
+volumes:
+  sqlserver_data:
