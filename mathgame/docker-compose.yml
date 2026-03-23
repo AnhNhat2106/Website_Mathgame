@@ -10,7 +10,7 @@ services:
       - MSSQL_SA_PASSWORD=MathGame@123456
       - MSSQL_PID=Developer
     ports:
-      - "1433:1433"
+      - "1434:1433"
     volumes:
       - sqlserver_data:/var/opt/mssql # Giữ lại dữ liệu kể cả khi xoá hộp
 

@@ -32,6 +32,7 @@ public class SecurityConfig {
                         "/js/**",
                         "/ws/**"          // SockJS handshake + websocket endpoints
                 ).permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form

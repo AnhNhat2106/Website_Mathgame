@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8" />
@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Oxanium:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="galaxy">
   <main class="battle-page">
@@ -26,15 +27,15 @@
       </div>
 
       <div class="table-wrap battle-table">
-        <table class="history-table">
+        <table class="glass-table">
           <thead>
             <tr>
-              <th>Thời gian</th>
-              <th>Đối thủ</th>
-              <th class="center">Tỉ số</th>
-              <th class="center">Kết quả</th>
-              <th class="center">Điểm (+/-)</th>
-              <th>Match ID</th>
+              <th><i class="fa-solid fa-clock"></i> Thời gian</th>
+              <th><i class="fa-solid fa-user"></i> Đối thủ</th>
+              <th class="center"><i class="fa-solid fa-chess-board"></i> Tỉ số</th>
+              <th class="center"><i class="fa-solid fa-flag-checkered"></i> Kết quả</th>
+              <th class="center"><i class="fa-solid fa-star"></i> Điểm (+/-)</th>
+              <th><i class="fa-solid fa-fingerprint"></i> Match ID</th>
             </tr>
           </thead>
           <tbody>
@@ -63,9 +64,9 @@
         <button class="pager-btn" type="button" disabled>&rsaquo;</button>
       </div>
 
-      <div class="battle-actions">
-        <a class="battle-btn" href="/battle">Quay lại thi đấu</a>
-        <a class="battle-btn alt" href="/lobby">Về trang chủ</a>
+      <div class="battle-actions" style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+        <a class="battle-btn alt" href="/lobby"><i class="fa-solid fa-house"></i> Về trang chủ</a>
+        <a class="battle-btn" href="/battle"><i class="fa-solid fa-khanda"></i> Quay lại thi đấu</a>
       </div>
     </section>
   </main>

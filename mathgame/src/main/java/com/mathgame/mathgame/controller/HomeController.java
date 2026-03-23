@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.security.Principal;
+import org.springframework.security.core.Authentication;
 
 @Controller
 public class HomeController {
@@ -23,8 +24,10 @@ public class HomeController {
     }
 
     @GetMapping("/lobby")
-    public String lobby(Model model, Principal principal) {
-        String username = principal != null ? principal.getName() : "";
+    public String lobby(Model model, Authentication auth) {
+        String username = auth != null ? auth.getName() : "";
+        boolean isAdmin = auth != null && auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+        
         BattleSummaryDto summary = username.isBlank() ? null : battleResultRepository.getSummary(username);
         long totalPoints = summary != null ? summary.getTotalPoints() : 0;
         long matches = summary != null ? summary.getMatches() : 0;
@@ -35,6 +38,7 @@ public class HomeController {
         model.addAttribute("battlePoints", totalPoints);
         model.addAttribute("battleMatches", matches);
         model.addAttribute("battleWinRate", winRate);
+        model.addAttribute("isAdmin", isAdmin);
 
         return "lobby";
     }

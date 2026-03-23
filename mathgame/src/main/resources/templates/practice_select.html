@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8"/>
@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Oxanium:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="galaxy">
   <main class="practice-page">
@@ -19,14 +20,23 @@
 
     <section class="practice-frame fade-up">
       <div class="alert alert-error" th:if="${error}" th:text="${error}"></div>
-      <div class="level-grid">
-        <a class="level-btn" href="/practice?level=easy">Dễ</a>
-        <a class="level-btn" href="/practice?level=medium">Trung bình</a>
-        <a class="level-btn" href="/practice?level=hard">Khó</a>
+      <div class="level-grid" id="newLevelGrid">
+        <a class="level-card level-easy" href="/practice?level=easy">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Dễ</span>
+        </a>
+        <a class="level-card level-medium" href="/practice?level=medium">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Trung bình</span>
+        </a>
+        <a class="level-card level-hard" href="/practice?level=hard">
+          <i class="fa-solid fa-fire"></i>
+          <span>Khó</span>
+        </a>
       </div>
 
-      <div class="practice-actions">
-        <a class="practice-btn alt" href="/lobby">Về trang chủ</a>
+      <div class="practice-actions" style="margin-top: 30px;">
+        <a class="practice-btn alt" href="/lobby"><i class="fa-solid fa-house"></i> Về trang chủ</a>
       </div>
     </section>
   </main>
