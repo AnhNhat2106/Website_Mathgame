@@ -5,7 +5,7 @@
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+), WebSocket.
 - **Backend:** Java Spring Boot, Cơ sở dữ liệu Microsoft SQL Server (MSSQL), Docker.
 
-## Hướng dẫn người khác chạy dự án:
+## Hướng dẫn chạy dự án:
 ## Cách 1: Chạy hoàn toàn bằng Docker (Khuyên dùng - Chuẩn 100%)
 *Chỉ yêu cầu máy đã cài đặt ứng dụng Docker Desktop.*
 
