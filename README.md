@@ -6,7 +6,7 @@
 - **Backend:** Java Spring Boot, Cơ sở dữ liệu Microsoft SQL Server (MSSQL), Docker.
 
 ## Hướng dẫn chạy dự án:
-## Cách 1: Chạy hoàn toàn bằng Docker (Khuyên dùng - Chuẩn 100%)
+## Cách 1: Chạy hoàn toàn bằng Docker (Khuyên dùng)
 *Chỉ yêu cầu máy đã cài đặt ứng dụng Docker Desktop.*
 
 1. **Clone dự án về máy:**
